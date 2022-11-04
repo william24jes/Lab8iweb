@@ -1,11 +1,11 @@
 package Daos;
 import Beans.Heroe;
-
 import java.sql.*;
 import java.util.ArrayList;
 public class HeroeDao {
 
     public ArrayList<Heroe> obtenerlistaHeroes(){
+
         ArrayList<Heroe> listaHeroes = new ArrayList<>();
 
         try{
@@ -14,7 +14,7 @@ public class HeroeDao {
             throw new RuntimeException(e);
         }
 
-        String url = "jdbc:mysql://localhost:3306/lab8";
+        String url = "jdbc:mysql://localhost:3306/l6_20203368";
         String sql = "SELECT idHeroes,nombre,edad,nivel,puntosDeExperiencia,pareja,genero,clase,ataque FROM heroes,genero,claseheroe Where genero_idgenero=idgenero and claseHeroe_idclase=idclase;";
 
         try(Connection connection = DriverManager.getConnection(url,"root","root");
