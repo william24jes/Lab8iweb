@@ -18,20 +18,16 @@ public class Servlet extends HttpServlet {
 
         String accion = request.getParameter("accion")==null?"inicio":request.getParameter("accion");
         RequestDispatcher view;
-        HeroeDao udao = new HeroeDao();
+        HeroeDao heroeDao = new HeroeDao();
         switch (accion) {
             case ("MenuPrincipal"):
                 view = request.getRequestDispatcher("MenuPrincipal.jsp");
                 view.forward(request, response);
                 break;
             case ("MenuDeHeroes"):
-                try {
-                    listaHeroes = hDao.obtenerIncidencias();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                request.setAttribute("listaHeroes", listaHeroes);
-                view = request.getRequestDispatcher(".jsp");
+
+                request.setAttribute("listaHeroes", heroeDao.obtenerlistaHeroes());
+                view = request.getRequestDispatcher("pruebaListarHeroes.jsp");
                 view.forward(request, response);
                 break;
             case ("MenuDeEnemigos"):
