@@ -1,7 +1,6 @@
 package Servlets;
 
 import Beans.Enemigo;
-import Beans.Heroe;
 import Daos.EnemigoDao;
 import Daos.HeroeDao;
 import jakarta.servlet.*;
@@ -9,6 +8,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 @WebServlet(name = "Servlet", value = "/MenuServlet")
@@ -19,8 +19,6 @@ public class Servlet extends HttpServlet {
         String accion = request.getParameter("accion")==null?"inicio":request.getParameter("accion");
         RequestDispatcher view;
         HeroeDao udao = new HeroeDao();
-        Heroe heroe = null;
-        Enemigo enemigo = null;
         switch (accion) {
             case ("MenuPrincipal"):
                 view = request.getRequestDispatcher("MenuPrincipal.jsp");
