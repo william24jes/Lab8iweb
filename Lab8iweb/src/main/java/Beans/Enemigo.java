@@ -1,6 +1,6 @@
 package Beans;
 
-public class Enemigos {
+public class Enemigo {
 
     private String nombre;
     private int clase;
