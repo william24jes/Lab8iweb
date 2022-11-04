@@ -3,7 +3,7 @@ package Beans;
 public class Hechizo {
     private int idHechizo;
     private String nombre;
-    private int portenciaDeHechizo;
+    private int potenciaDeHechizo;
     private int precisionDeHechizo;
     private int nivelAprendizaje;
     private String hechizoBase;
@@ -25,12 +25,12 @@ public class Hechizo {
         this.nombre = nombre;
     }
 
-    public int getPortenciaDeHechizo() {
-        return portenciaDeHechizo;
+    public int getPotenciaDeHechizo() {
+        return potenciaDeHechizo;
     }
 
-    public void setPortenciaDeHechizo(int portenciaDeHechizo) {
-        this.portenciaDeHechizo = portenciaDeHechizo;
+    public void setPotenciaDeHechizo(int portenciaDeHechizo) {
+        this.potenciaDeHechizo = portenciaDeHechizo;
     }
 
     public int getPrecisionDeHechizo() {
