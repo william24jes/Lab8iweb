@@ -120,7 +120,7 @@
                         <td>
 
                             <a type="button" class="btn btn-primary"
-                               href="<%=request.getContextPath()%>/MenuServlet?action=editar&id>">
+                               href="<%=request.getContextPath()%>/MenuServlet?accion=editar&id=<%=heroe.getIdHeroe()%>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                      fill="currentColor"
                                      class="bi bi-pencil" viewBox="0 0 16 16">
@@ -129,7 +129,7 @@
                             </a>
                             <a type="button" class="btn btn-danger"
                                onclick="return confirm('¿Estas seguro(a) que deseas borrar?')"
-                               href="<%=request.getContextPath()%>/AdminServlet?action=borrar&id=">
+                               href="<%=request.getContextPath()%>/MenuServlet?accion=editar&id=<%=heroe.getIdHeroe()%>">
                                 <i class="bi bi-trash"></i></a>
                         </td>
 

@@ -20,6 +20,9 @@ public class Servlet extends HttpServlet {
         String accion = request.getParameter("accion")==null?"inicio":request.getParameter("accion");
         RequestDispatcher view;
         HeroeDao heroeDao = new HeroeDao();
+        Heroe heroe;
+        String idHeroe;
+
         switch (accion) {
             case ("MenuPrincipal"):
                 view = request.getRequestDispatcher("MenuPrincipal.jsp");
@@ -30,6 +33,19 @@ public class Servlet extends HttpServlet {
                 request.setAttribute("listaHeroes", heroeDao.obtenerlistaHeroes());
                 view = request.getRequestDispatcher("heroe.jsp");
                 view.forward(request, response);
+                break;
+
+            case "editar":
+                idHeroe = request.getParameter("id");
+                heroe = heroeDao.buscarPorId(Integer.parseInt(idHeroe) );
+
+                if (heroe != null) {
+                    request.setAttribute("hereoeEditar", heroe);
+                    view = request.getRequestDispatcher("editarHeroe.jsp");
+                    view.forward(request, response);
+                } else {
+                    response.sendRedirect(request.getContextPath() + "/AdminServlet");
+                }
                 break;
             case ("MenuDeEnemigos"):
                 view = request.getRequestDispatcher(".jsp");
@@ -59,11 +75,11 @@ public class Servlet extends HttpServlet {
             case "actualizar":
 
                 heroe.setIdHeroe(Integer.parseInt(request.getParameter("ID Heroe"))); /*colocar los parametros en los botones del jsp*/
-                heroe.setNombre(request.getParameter("Nombre"));
-                heroe.setEdad(Integer.parseInt(request.getParameter("Apellidos")));
-                heroe.setNivel(Integer.parseInt(request.getParameter("Correo PUCP")));
-                heroe.setPuntosDeExperiencia(Integer.parseInt(request.getParameter("DNI")));
-                heroe.setPareja(request.getParameter("Celular"));
+                heroe.setNombre(request.getParameter("nombre"));
+                heroe.setEdad(Integer.parseInt(request.getParameter("edad")));
+                heroe.setNivel(Integer.parseInt(request.getParameter("genero")));
+                heroe.setPuntosDeExperiencia(Integer.parseInt(request.getParameter("clase")));
+                heroe.setPareja(request.getParameter("nivel"));
                 /*colocar if-else para genero y clase despues*/
                 heroe.setGenero(request.getParameter("Categoría"));
                 heroe.setClase(request.getParameter("Rol"));

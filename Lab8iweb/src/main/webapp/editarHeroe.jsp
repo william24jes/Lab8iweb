@@ -1,4 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="Beans.Heroe" %>
+<%@ page import="java.util.ArrayList" %>
+<%
+Heroe heroe = (Heroe) request.getAttribute("heroeEditar");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,37 +82,37 @@
                         </ul>
                         <br>
                     </td>
-                    <form method="post" action="<%=request.getContextPath()%>/ServletAdmin?action=actualizar">
+                    <form method="post" action="<%=request.getContextPath()%>/MenuServlet?accion=actualizar">
                         <td style="padding-left: 2rem;">
                             <ul class="list-group list-group-flush">
-                                <input type="hidden" name = "idHeroe" value="<%=user.getIdHeroe()%>">
+                                <input type="hidden" id="ID Heroe" name = "ID Heroe" value="<%=heroe.getIdHeroe()%>">
                             </ul>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"   id="nombre" name="nombre"  value="<%=user.getNombre()%>">
-                            </ul>
-                            <br>
-                            <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"   id="edad" name="edad" value="<%=user.getEdad()%>">
+                                <input type="text" class="form-control"   id="nombre" name="nombre"  value="<%=heroe.getNombre()%>">
                             </ul>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"  id="genero" name="genero"  value="<%=user.getGenero()%>">
+                                <input type="text" class="form-control"   id="idHeroe" name="edad" value="<%=heroe.getEdad()%>">
                             </ul>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"  id="clase" name="clase"  value="<%=user.getClase()%>">
+                                <input type="text" class="form-control"  id="genero" name="genero"  value="<%=heroe.getGenero()%>">
                             </ul>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"  id="nivel" name="nivel"  value="<%=user.getNivel()%>">
+                                <input type="text" class="form-control"  id="clase" name="clase"  value="<%=heroe.getClase()%>">
                             </ul>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"  id="ataque" name="ataque"  value="<%=user.getAtaque()%>">
+                                <input type="text" class="form-control"  id="nivel" name="nivel"  value="<%=heroe.getNivel()%>">
                             </ul>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"   id="pareja" name="pareja"  value="<%=user.getPareja()%>">
+                                <input type="text" class="form-control"  id="ataque" name="ataque"  value="<%=heroe.getAtaque()%>">
+                            </ul>
+                            <br>
+                            <ul class="list-group list-group-flush">
+                                <input type="text" class="form-control"   id="pareja" name="pareja"  value="<%=heroe.getPareja()%>">
                             </ul>
                             <br>
                         </td>
