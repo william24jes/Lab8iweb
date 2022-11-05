@@ -81,13 +81,12 @@ public class Servlet extends HttpServlet {
                 heroe.setPuntosDeExperiencia(Integer.parseInt(request.getParameter("clase")));
                 heroe.setPareja(request.getParameter("nivel"));
                 /*colocar if-else para genero y clase despues*/
-                heroe.setGenero(request.getParameter("Categoría"));
-                heroe.setClase(request.getParameter("Rol"));
-                heroe.setAtaque(Integer.parseInt(request.getParameter("Codigo")));
+                heroe.setGenero(request.getParameter("ataque"));
+                heroe.setClase(request.getParameter("pareja"));
 
                 heroeDao.actualizarHeroe(heroe);
 
-                response.sendRedirect(request.getContextPath() + "/AdminServlet");
+                response.sendRedirect(request.getContextPath() + "/MenuServlet");
 
                 break;
 

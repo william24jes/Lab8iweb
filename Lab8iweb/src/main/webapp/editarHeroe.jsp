@@ -130,7 +130,7 @@ Heroe heroe = (Heroe) request.getAttribute("heroeEditar");
 </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <br></br>
-<a class="btn btn-primary" href="<%=request.getContextPath()%>/ServletAdmin?action=heroes" role="button" style="margin-left: 0rem; background-color:#D12C22 ; border: none;"> ◄ Atrás </a>
+<a class="btn btn-primary" href="<%=request.getContextPath()%>/MenuServlet?accion=heroes" role="button" style="margin-left: 0rem; background-color:#D12C22 ; border: none;"> ◄ Atrás </a>
 <br><br>
 </body>
 </html>
