@@ -84,7 +84,7 @@
                             <a href="lab8_editarHeroe.html" type="button" class="btn btn-outline-secondary">Editar</a>
                             <a href="verIncidencia.html" type="button" class="btn btn-outline-secondary">Inventario</a>
                             <a type="button" class="btn btn-danger"
-                               onclick="return confirm('¿Estas seguro(a) que deseas borrar?')"
+                               onclick="return confirm('¿Estas seguro(a) que deseas eliminar al heroe?')"
                                href="<%=request.getContextPath()%>/ServletAdmin?action=borrar&id=<%=user.getIdHeroe()%>">Eliminar
                             </a>
                         </div>
