@@ -14,7 +14,7 @@ public class HechizoDao {
         try {
             String user = "root";
             String pass = "root";
-            String url = "jdbc:mysql://localhost:3306/lab8";
+            String url = "jdbc:mysql://localhost:3306/l8";
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, user, pass);

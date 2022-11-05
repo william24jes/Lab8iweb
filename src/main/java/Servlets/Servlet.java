@@ -17,7 +17,7 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String accion = request.getParameter("accion");
+        String accion = request.getParameter("accion")==null?"inicio":request.getParameter("accion");
         RequestDispatcher view;
         HeroeDao heroeDao = new HeroeDao();
         Heroe heroe;
@@ -72,7 +72,7 @@ public class Servlet extends HttpServlet {
 
         switch (accion) {
 
-            case "actualizarHeroe":
+            case "actualizar":
 
                 heroe.setIdHeroe(Integer.parseInt(request.getParameter("ID Heroe"))); /*colocar los parametros en los botones del jsp*/
                 heroe.setNombre(request.getParameter("nombre"));
@@ -81,12 +81,13 @@ public class Servlet extends HttpServlet {
                 heroe.setPuntosDeExperiencia(Integer.parseInt(request.getParameter("clase")));
                 heroe.setPareja(request.getParameter("nivel"));
                 /*colocar if-else para genero y clase despues*/
-                heroe.setGenero(request.getParameter("ataque"));
-                heroe.setClase(request.getParameter("pareja"));
+                heroe.setGenero(request.getParameter("Categoría"));
+                heroe.setClase(request.getParameter("Rol"));
+                heroe.setAtaque(Integer.parseInt(request.getParameter("Codigo")));
 
                 heroeDao.actualizarHeroe(heroe);
 
-                response.sendRedirect(request.getContextPath() + "/MenuServlet");
+                response.sendRedirect(request.getContextPath() + "/AdminServlet");
 
                 break;
 
