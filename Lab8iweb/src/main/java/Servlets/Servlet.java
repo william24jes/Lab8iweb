@@ -17,7 +17,7 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String accion = request.getParameter("accion")==null?"inicio":request.getParameter("accion");
+        String accion = request.getParameter("accion");
         RequestDispatcher view;
         HeroeDao heroeDao = new HeroeDao();
         Heroe heroe;
@@ -72,7 +72,7 @@ public class Servlet extends HttpServlet {
 
         switch (accion) {
 
-            case "actualizar":
+            case "actualizarHeroe":
 
                 heroe.setIdHeroe(Integer.parseInt(request.getParameter("ID Heroe"))); /*colocar los parametros en los botones del jsp*/
                 heroe.setNombre(request.getParameter("nombre"));
