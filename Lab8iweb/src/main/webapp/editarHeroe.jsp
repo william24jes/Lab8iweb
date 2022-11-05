@@ -30,13 +30,6 @@
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <h4><li><a href="#" class="nav-link px-2"><b style="color:#144C47">WIKI FANTASIA</b></a></li></h4>
-                <!--
-                <div class="dropdown text-end">
-                    <a href="#" class="d-block link-dark text-decoration-none" aria-expanded="false">
-                        <img src="http://diaferdesign.com/wp-content/uploads/2017/11/diana-fondo-desenfocado-circular-300x283.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                    </a>
-                </div>
-                -->
             </ul>
         </div>
     </div>
@@ -53,11 +46,6 @@
             <table>
                 <tr>
                     <td><img src="https://cdnb.artstation.com/p/assets/images/images/031/262/015/large/seo-eaglesage-firemagecasuallsmall.jpg?1603114058" class="rounded mx-auto d-block " alt="userphoto" height="400rem" width="200rem">
-                        <!--<br>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-danger">Eliminar Usuario</button>
-                        </div>
-                        -->
                     </td>
                     <td style="padding-left: 2rem;">
                         <ul class="list-group list-group-flush">
@@ -137,7 +125,7 @@
 </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <br></br>
-<a class="btn btn-primary" href="lab8_heroes.html" role="button" style="margin-left: 0rem; background-color:#D12C22 ; border: none;"> ◄ Atrás </a>
+<a class="btn btn-primary" href="<%=request.getContextPath()%>/ServletAdmin?action=heroes" role="button" style="margin-left: 0rem; background-color:#D12C22 ; border: none;"> ◄ Atrás </a>
 <br><br>
 </body>
 </html>

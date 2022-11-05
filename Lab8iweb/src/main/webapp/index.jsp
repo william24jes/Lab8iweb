@@ -57,7 +57,7 @@
             <h4 style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF" class="card-text"><b> SELECCIONE UNA OPCIÓN </b></h4>
             <p></p>
             <div class="d-grid gap-2 col-8 mx-auto">
-                <a href="lab8_heroes.html " style="color: rgb(141, 15, 15);"><button class="btn btn-light" type="button" class="btn btn-secondary" style="color:#404546 ; width: 15rem; font-size: 15px"><b>Heroes</b></button></a>
+                <a href="<%=request.getContextPath()%>/ServletAdmin?action=heroe" style="color: rgb(141, 15, 15);"><button class="btn btn-light" type="button" class="btn btn-secondary" style="color:#404546 ; width: 15rem; font-size: 15px"><b>Heroes</b></button></a>
                 <a href="crear_cuenta_nueva.html" style="color: rgb(141, 15, 15);"><button class="btn btn-light" type="button" style="color:#404546; width: 15rem; font-size: 15px;"><b>Enemigos</b></button></a>
                 <a href="incio_p2.html" style="color: rgb(141, 15, 15);"><button class="btn btn-light" type="button" class="btn btn-secondary" style="color:#404546 ; width: 15rem; font-size: 15px"><b>Hechizos</b></button></a>
                 <a href="crear_cuenta_nueva.html" style="color: rgb(141, 15, 15);"><button class="btn btn-light" type="button" style="color:#404546; width: 15rem; font-size: 15px;"><b>Objetos</b></button></a>
