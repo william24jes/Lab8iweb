@@ -82,37 +82,37 @@ Heroe heroe = (Heroe) request.getAttribute("heroeEditar");
                         </ul>
                         <br>
                     </td>
-                    <form method="post" action="<%=request.getContextPath()%>/MenuServlet?accion=actualizarHeroe">
+                    <form method="post" action="<%=request.getContextPath()%>/MenuServlet?accion=actualizar">
                         <td style="padding-left: 2rem;">
                             <ul class="list-group list-group-flush">
-                                <input type="hidden" id="ID Heroe" name = "ID Heroe" placeholder="ID Heroe" value="<%=heroe.getIdHeroe()%>">
+                                <input type="hidden" id="ID Heroe" name = "ID Heroe" value="<%=heroe.getIdHeroe()%>">
                             </ul>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"   id="nombre" name="nombre" placeholder="nombre" value="<%=heroe.getNombre()%>">
-                            </ul>
-                            <br>
-                            <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"   id="idHeroe" name="edad" placeholder="edad" value="<%=heroe.getEdad()%>">
+                                <input type="text" class="form-control"   id="nombre" name="nombre"  value="<%=heroe.getNombre()%>">
                             </ul>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"  id="genero" name="genero" placeholder="genero" value="<%=heroe.getGenero()%>">
+                                <input type="text" class="form-control"   id="idHeroe" name="edad" value="<%=heroe.getEdad()%>">
                             </ul>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"  id="clase" name="clase" placeholder="clase" value="<%=heroe.getClase()%>">
+                                <input type="text" class="form-control"  id="genero" name="genero"  value="<%=heroe.getGenero()%>">
                             </ul>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"  id="nivel" name="nivel" placeholder="nivel" value="<%=heroe.getNivel()%>">
+                                <input type="text" class="form-control"  id="clase" name="clase"  value="<%=heroe.getClase()%>">
                             </ul>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"  id="ataque" name="ataque" placeholder="ataque" value="<%=heroe.getAtaque()%>">
+                                <input type="text" class="form-control"  id="nivel" name="nivel"  value="<%=heroe.getNivel()%>">
                             </ul>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <input type="text" class="form-control"   id="pareja" name="pareja" placeholder="pareja" value="<%=heroe.getPareja()%>">
+                                <input type="text" class="form-control"  id="ataque" name="ataque"  value="<%=heroe.getAtaque()%>">
+                            </ul>
+                            <br>
+                            <ul class="list-group list-group-flush">
+                                <input type="text" class="form-control"   id="pareja" name="pareja"  value="<%=heroe.getPareja()%>">
                             </ul>
                             <br>
                         </td>
@@ -130,7 +130,7 @@ Heroe heroe = (Heroe) request.getAttribute("heroeEditar");
 </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <br></br>
-<a class="btn btn-primary" href="<%=request.getContextPath()%>/MenuServlet" role="button" style="margin-left: 0rem; background-color:#D12C22 ; border: none;"> ◄ Atrás </a>
+<a class="btn btn-primary" href="<%=request.getContextPath()%>/ServletAdmin?action=heroes" role="button" style="margin-left: 0rem; background-color:#D12C22 ; border: none;"> ◄ Atrás </a>
 <br><br>
 </body>
 </html>
