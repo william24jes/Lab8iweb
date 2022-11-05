@@ -18,32 +18,30 @@
             height: 100vh;
             bgcolor = "#800000";
         }
-        @font-face {
-            font-family: Decor;
-            src: url(KrinkesDecorPERSONAL.ttf);
-        }
-        @font-face{
-            font-family: Decor;
-            src: url(KrinkesRegularPERSONAL.ttf);
-            font-style: italic;
-        }
-        p{
-            font-family: Decor;
-        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-
-<body class="p-3 m-0 border-0 bd-example">
-<table>
-    <tr>
-    <tr>
-        <td>
-        <td><h6 style="color: black; font-family:Impact, serif"><b> WIKI</b><br style="color:#244A47"> <strong>FANTASÍA </strong></h6></td>
-        </td>
-    </tr>
-    </tr>
-</table>
+<body>
+<header class="d-flex p-2" style="background-color: rgba(255,255,255,0.6)">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="40" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <h4><li><a href="#" class="nav-link px-2"><b style="color:#144C47">WIKI FANTASIA</b></a></li></h4>
+                <!--
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none" aria-expanded="false">
+                        <img src="http://diaferdesign.com/wp-content/uploads/2017/11/diana-fondo-desenfocado-circular-300x283.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                </div>
+                -->
+            </ul>
+        </div>
+    </div>
+</header>
+<p></p>
 <p></p>
 <div class="d-flex justify-content-center">
     <center>
