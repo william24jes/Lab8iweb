@@ -2,6 +2,8 @@ package Beans;
 
 public class Enemigo {
 
+    private int idEnemigo;
+
     private String nombre;
     private int clase;
     private int ataque;
@@ -9,6 +11,14 @@ public class Enemigo {
     private String objetoDejado;
     private float probDejarObjeto;
     private String genero;
+
+    public int getIdEnemigo() {
+        return idEnemigo;
+    }
+
+    public void setIdEnemigo(int idEnemigo) {
+        this.idEnemigo = idEnemigo;
+    }
 
     public String getNombre() {
         return nombre;

@@ -125,7 +125,6 @@ public class Servlet extends HttpServlet {
         } else if (intervalo3){
             e= Math.pow(nivel,3) * (double)(nivel/2)/50;
         }
-
         return e;
     }
 }
