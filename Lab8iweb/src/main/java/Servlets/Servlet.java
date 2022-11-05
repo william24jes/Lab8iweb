@@ -28,7 +28,7 @@ public class Servlet extends HttpServlet {
             case ("MenuDeHeroes"):
 
                 request.setAttribute("listaHeroes", heroeDao.obtenerlistaHeroes());
-                view = request.getRequestDispatcher("pruebaListarHeroes.jsp");
+                view = request.getRequestDispatcher("heroe.jsp");
                 view.forward(request, response);
                 break;
             case ("MenuDeEnemigos"):

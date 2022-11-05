@@ -1,11 +1,24 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="Beans.Heroe" %>
+<%@ page import="java.util.ArrayList" %>
+<%
+    ArrayList<Heroe> listaHeroes = (ArrayList<Heroe>) request.getAttribute("listaHeroes");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/600382161a.js" crossorigin="anonymous"></script>
     <title>Heroes</title>
     <style>
         body {
@@ -55,48 +68,137 @@
                 </form>
                 <br>
             </div>
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
                 <thead>
-                <tr>
-                    <th style="color:#053934; padding-left: 2rem; text-align: center"><b>NOMBRE</b></th>
-                    <th style="color:#053934; padding-left: 2rem; text-align: center"><b>EDAD</b></th>
-                    <th style="color:#053934; padding-left: 2rem; text-align: center"><b>GENERO</b></th>
-                    <th style="color:#053934; padding-left: 2rem; text-align: center"><b>CLASE</b></th>
-                    <th style="color:#053934; padding-left: 2rem; text-align: center"><b>NIVEL</b></th>
-                    <th style="color:#053934; padding-left: 2rem; text-align: center"><b>ATAQUE</b></th>
-                    <th style="color:#053934; padding-left: 2rem; text-align: center"><b>PAREJA</b></th>
-                    <th style="color:#053934; padding-left: 2rem; text-align: center"><b>OPCIONES</b></th>
-                </tr>
+                    <tr style="align-content: center">
+                        <th style="color:#053934; padding-left: 2rem; text-align: center"><b>ID</b></th>
+                        <th style="color:#053934; padding-left: 2rem; text-align: center"><b>NOMBRE</b></th>
+                        <th style="color:#053934; padding-left: 2rem; text-align: center"><b>EDAD</b></th>
+                        <th style="color:#053934; padding-left: 2rem; text-align: center"><b>GENERO</b></th>
+                        <th style="color:#053934; padding-left: 2rem; text-align: center"><b>CLASE</b></th>
+                        <th style="color:#053934; padding-left: 2rem; text-align: center"><b>NIVEL</b></th>
+                        <th style="color:#053934; padding-left: 2rem; text-align: center"><b>ATAQUE</b></th>
+                        <th style="color:#053934; padding-left: 2rem; text-align: center"><b>PAREJA</b></th>
+                        <th style="color:#053934; padding-left: 2rem; text-align: center"><b>PUNTOS DE EXPERIENCIA</b></th>
+                        <th style="color:#053934; padding-left: 2rem; text-align: center"><b>OPCIONES</b></th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <%for (Heroes heroe : lista) { %>
-                    <td style="color:black; padding-left: 2rem; text-align: center"><b><%=heroe.getNombre()%></b></td>
-                    <td style="color:black; padding-left: 2rem; text-align: center"><b><%=heroe.getEdad()%></b></td>
-                    <td style="color:black; padding-left: 2rem; text-align: center"><b><%=heroe.getGenero()%></b></td>
-                    <td style="color:black;; padding-left: 2rem; text-align: center"><b><%=heroe.getClase()%></b></td>
-                    <td style="color:black; padding-left: 2rem; text-align: center"><b><%=heroe.getNivel()%></b></td>
-                    <td style="color:black; padding-left: 2rem; text-align: center"><b><%=heroe.getAtaque()%></b></td>
-                    <td style="color:black; padding-left: 2rem; text-align: center"><b><%=heroe.getPareja()%></b></td>
-                    <% } %>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="padding-left: 3rem;">
-                            <a href="<%=request.getContextPath()%>/ServletAdmin?action=index" type="button" class="btn btn-outline-secondary">Editar</a>
-                            <a href="verIncidencia.html" type="button" class="btn btn-outline-secondary">Inventario</a>
-                            <a type="button" class="btn btn-danger"
-                               onclick="return confirm('¿Estas seguro(a) que deseas eliminar al heroe?')"
-                               href="<%=request.getContextPath()%>/ServletAdmin?action=borrar&id=<%=user.getIdHeroe()%>">Eliminar
+                    <%
+
+                        for (Heroe heroe : listaHeroes) {
+                    %>
+                    <tr>
+                        <td>
+                            <%=heroe.getIdHeroe()%>
+                        </td>
+                        <td>
+                            <%=heroe.getNombre()%>
+                        </td>
+                        <td>
+                            <%=heroe.getEdad()%>
+                        </td>
+                        <td>
+                            <%=heroe.getGenero()%>
+                        </td>
+                        <td>
+                            <%=heroe.getClase()%>
+                        </td>
+                        <td>
+                            <%=heroe.getNivel()%>
+                        </td>
+                        <td>
+                            <%=heroe.getAtaque()%>
+                        </td>
+                        <td>
+                            <%=heroe.getPareja()%>
+                        </td>
+                        <td>
+                            <%=heroe.getPuntosDeExperiencia()%>
+                        </td>
+
+                        <td>
+
+                            <a type="button" class="btn btn-primary"
+                               href="<%=request.getContextPath()%>/MenuServlet?action=editar&id>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                     fill="currentColor"
+                                     class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"></path>
+                                </svg>
                             </a>
-                        </div>
-                    </td>
-                </tr>
+                            <a type="button" class="btn btn-danger"
+                               onclick="return confirm('¿Estas seguro(a) que deseas borrar?')"
+                               href="<%=request.getContextPath()%>/AdminServlet?action=borrar&id=">
+                                <i class="bi bi-trash"></i></a>
+                        </td>
+
+
+
+                    </tr>
+                    <%
+
+                        }
+                    %>
+
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<br></br>
+<br>
 <a class="btn btn-primary" href="lab8.html" role="button" style="margin-left: 0rem; background-color:#D12C22 ; border: none;"> ◄ Atrás </a>
 <br><br>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+<!--
+<table class="table table-striped">
+<thead>
+<tr>
+<th style="color:#053934; padding-left: 2rem; text-align: center"><b>NOMBRE</b></th>
+<th style="color:#053934; padding-left: 2rem; text-align: center"><b>EDAD</b></th>
+<th style="color:#053934; padding-left: 2rem; text-align: center"><b>GENERO</b></th>
+<th style="color:#053934; padding-left: 2rem; text-align: center"><b>CLASE</b></th>
+<th style="color:#053934; padding-left: 2rem; text-align: center"><b>NIVEL</b></th>
+<th style="color:#053934; padding-left: 2rem; text-align: center"><b>ATAQUE</b></th>
+<th style="color:#053934; padding-left: 2rem; text-align: center"><b>PAREJA</b></th>
+<th style="color:#053934; padding-left: 2rem; text-align: center"><b>OPCIONES</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<for (Heroe heroe : listaHeroes) { %>
+<td style="color:black; padding-left: 2rem; text-align: center"><b><=heroe.getNombre()%></b></td>
+<td style="color:black; padding-left: 2rem; text-align: center"><b><=heroe.getEdad()%></b></td>
+<td style="color:black; padding-left: 2rem; text-align: center"><b><=heroe.getGenero()%></b></td>
+<td style="color:black;; padding-left: 2rem; text-align: center"><b><=heroe.getClase()%></b></td>
+<td style="color:black; padding-left: 2rem; text-align: center"><b><=heroe.getNivel()%></b></td>
+<td style="color:black; padding-left: 2rem; text-align: center"><b><=heroe.getAtaque()%></b></td>
+<td style="color:black; padding-left: 2rem; text-align: center"><b><=heroe.getPareja()%></b></td>
+< } %>
+<td>
+<div class="btn-group" role="group" aria-label="Basic mixed styles example" style="padding-left: 3rem;">
+<a href="<=request.getContextPath()%>/MenuServlet?accion=index" type="button" class="btn btn-outline-secondary">Editar</a>
+<a href="" type="button" class="btn btn-outline-secondary">Inventario</a>
+<a type="button" class="btn btn-danger"
+onclick="return confirm('¿Estas seguro(a) que deseas eliminar al heroe?')"
+href="<=request.getContextPath()%>">Eliminar
+</a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+-->
